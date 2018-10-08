@@ -1,0 +1,53 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+
+	<f:layout name="Default" />
+
+	<f:section name="content">
+
+		<h1>Movies list</h1>
+
+		<f:flashMessages />
+
+		<f:form action="list" additionalAttributes="{role: 'form'}">
+			<div class="form-inline">
+				<div class="form-group">
+					<f:form.textfield name="search" value="{search}" class="form-control" />
+					<f:form.submit value="Search!" class="btn-xs btn-primary" />
+				</div>
+			</div>
+		</f:form>
+
+		<table class="table-bordered">
+			<thead>
+			<tr>
+				<th><f:translate key="tx_movierental_domain_model_movie.title" /></th>
+				<th><f:translate key="tx_movierental_domain_model_movie.description" /></th>
+				<th><f:translate key="tx_movierental_domain_model_movie.rating" /></th>
+				<th> </th>
+				<th> </th>
+			</tr>
+			</thead>
+			<tbody>
+			<p>Liczba wszystkich filmów: <strong>{count}</strong></p>
+			<p>Wyświetlinych (ustawienia): <strong>{settings.movies.max}</strong></p>
+			<f:for each="{movies}" as="movie">
+				<tr>
+					<td><f:link.action action="show" arguments="{movie : movie}"> {movie.title}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{movie : movie}"> {movie.description}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{movie : movie}"> {movie.rating}</f:link.action></td>
+					<td><f:link.action action="updateForm" arguments="{movie:movie}" class="btn btn-success">Edit</f:link.action> </td>
+					<td><f:link.action action="deleteConfirm" arguments="{movie : movie}" class="btn btn-danger">Delete</f:link.action></td>
+				</tr>
+			</f:for>
+			</tbody>
+		</table>
+
+		<f:link.action action="addForm" class="btn btn-primary">Create movie</f:link.action>
+	</f:section>
+
+
+
+
+</html>

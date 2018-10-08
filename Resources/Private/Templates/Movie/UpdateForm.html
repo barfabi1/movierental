@@ -1,0 +1,24 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:form action="update" object="{movie}" name="movie" additionalAttributes="{role:'form'}">
+
+	<div class="form-group">
+		<label>Movie title</label>
+		<f:form.textfield property="title" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label>Movie description</label>
+		<f:form.textfield property="description" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label>Movie rating</label>
+		<f:form.textfield property="rating" class="form-control" />
+	</div>
+
+	<f:form.submit value="Update Movie!" class="btn btn-primary" />
+
+	<f:link.action action="list">Powrót do listy</f:link.action>
+
+</f:form>
+</html>

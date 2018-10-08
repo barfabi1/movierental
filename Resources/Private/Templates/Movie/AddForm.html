@@ -1,0 +1,27 @@
+{namespace tv = ACME\Movierental\ViewHelpers}
+<h1>Create new movie</h1>
+
+<div class="alert alert-danger">
+    <f:render partial="Error" arguments="{object:'movie'}" />
+</div>
+
+<f:form action="add" object="{movie}" name="movie" additionalAttributes="{role:'form'}">
+
+    <div class="form-group">
+        <label{tv:hasError(property:'title',then:' class="text-danger"')}>Movie title</label>
+        <f:form.textfield property="title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label{tv:hasError(property:'description',then:' class="text-danger"')}>Movie descritpion</label>
+        <f:form.textfield property="description" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label{tv:hasError(property:'rating',then:' class="text-danger"')}>Movie rating</label>
+        <f:form.textfield property="rating" class="form-control" />
+    </div>
+
+    <f:form.submit value="Create Movie!" class="btn btn-primary" />
+
+</f:form>

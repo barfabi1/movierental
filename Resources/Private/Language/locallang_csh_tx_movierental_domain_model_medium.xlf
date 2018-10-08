@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-04T14:50:27Z" product-name="movierental">
+		<header/>
+		<body>
+			<trans-unit id="is_rented.description">
+				<source>isRented</source>
+			</trans-unit>
+			<trans-unit id="rented_on.description">
+				<source>rentedOn</source>
+			</trans-unit>
+			<trans-unit id="rented_until.description">
+				<source>rentedUntil</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="user.description">
+				<source>user</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

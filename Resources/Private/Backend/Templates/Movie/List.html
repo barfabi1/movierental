@@ -1,0 +1,42 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Movie</h1>
+
+<f:flashMessages />
+
+<table  class="tx_movierental" >
+	<tr>
+		<th><f:translate key="tx_movierental_domain_model_movie.title" /></th>
+		<th><f:translate key="tx_movierental_domain_model_movie.description" /></th>
+		<th><f:translate key="tx_movierental_domain_model_movie.rating" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{movies}" as="movie">
+		<tr>
+			<td><f:link.action action="show" arguments="{movie : movie}"> {movie.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{movie : movie}"> {movie.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{movie : movie}"> {movie.rating}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{movie : movie}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{movie : movie}">Delete</f:link.action></td>
+		</tr>
+		</f:for>
+</table>
+
+<f:link.action action="new">New Movie</f:link.action>
+	</f:section>
+</html>

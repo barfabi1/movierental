@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-04T14:50:27Z" product-name="movierental">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>Title of the movie</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description of the movie</source>
+			</trans-unit>
+			<trans-unit id="rating.description">
+				<source>Rating of the movie</source>
+			</trans-unit>
+			<trans-unit id="genres.description">
+				<source>Genres associated with the movie</source>
+			</trans-unit>
+			<trans-unit id="director.description">
+				<source>director</source>
+			</trans-unit>
+			<trans-unit id="studio.description">
+				<source>studio</source>
+			</trans-unit>
+			<trans-unit id="copies.description">
+				<source>copies</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+{
+    "name": "acme/movierental",
+    "type": "typo3-cms-extension",
+    "description": "A simple system for reserving movies theough the web",
+    "authors": [
+        {
+            "name": "John Simple",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ACME\\Movierental\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ACME\\Movierental\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "movierental": "self.version",
+        "typo3-ter/movierental": "self.version"
+    }
+}
