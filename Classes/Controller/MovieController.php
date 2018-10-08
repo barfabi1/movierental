@@ -55,8 +55,16 @@ class MovieController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         $movieList = [];
         //$movieList['movies'] = $this->movieRepository->findAll();
+
+
+        $querySettings = $this->movieRepository->createQuery()->getQuerySettings();
+        $querySettings->setIgnoreEnableFields(true);
+        $this->movieRepository->setDefaultQuerySettings($querySettings);
+
         $movieList['movies'] = $this->movieRepository->findSearchWord($search, $limit);
-        $movieList['count'] = $this->movieRepository->countAll();
+        $movieList['count'] = $movieList['movies']->count();
+
+        //GOOD $this->movieRepository->findAll()->count();
         //$movieList['shown'] = $this->settings['movies']['max'];
 
         $this->view->assignMultiple($movieList);

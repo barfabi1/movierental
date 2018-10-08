@@ -29,6 +29,8 @@ class MovieRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             array('title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING)
         );
 
+        //$query->getQuerySettings()->setIgnoreEnableFields(true);
+
         $limit = (int)$limit;
         if ($limit > 0){
             $query->setLimit($limit);
